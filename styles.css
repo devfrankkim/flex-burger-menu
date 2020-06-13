@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&family=Piedra&family=Questrial&display=swap");
+:root {
+  --text-color: rgb(242, 242, 242);
+  --main-color: #5a4df2;
+  --accent-color: rgb(255, 175, 25);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Questrial", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-color);
+  padding: 8px 12px;
+}
+
+.navbar__logo {
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar__menu li {
+  padding: 8px 12px;
+}
+.navbar__menu li:hover {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+.navbar__social-media {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+}
+
+.navbar__social-media li {
+  padding: 8px 12px;
+}
+
+.navbar__toggleBtn {
+  position: absolute;
+  right: 0px;
+  padding-right: 12px;
+  font-size: 1.3rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.navbar__toggleBtn:hover {
+  color: var(--accent-color);
+  transition: color 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar__menu li {
+    padding: 0.8rem;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  .navbar__social-media {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar__menu.active,
+  .navbar__social-media.active {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .navbar__toggleBtn {
+    display: none;
+  }
+}
